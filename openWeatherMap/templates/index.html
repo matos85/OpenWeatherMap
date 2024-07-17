@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post" action="/forecast">
+        <label for="city">Enter city:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Get Forecast</button>
+    </form>
+    <br>
+    <a href="/history">View Search History</a>
+</body>
+</html>

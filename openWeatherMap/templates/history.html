@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search History</title>
+</head>
+<body>
+    <h1>Top 5 Searched Cities</h1>
+    <ul>
+    {% for city in cities %}
+        <li>{{ city.city }} ({{ city.views }} views)</li>
+    {% endfor %}
+    </ul>
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast for {{ city.city }}</h1>
+
+    {% if weather %}
+        <p>Temperature: {{ weather.main.temp }}°C</p>
+        <p>Description: {{ weather.weather[0].description }}</p>
+        <p>Views for this city: {{ city.views }}</p>
+    {% else %}
+        <p>Error fetching weather data.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
