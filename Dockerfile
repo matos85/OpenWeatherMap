@@ -1,17 +1,17 @@
-# Используем образ Python 3.12
-FROM python:3.12
+# Use the official Python image as the base image
+FROM python:3.8-slim
 
-# Устанавливаем рабочую директорию внутри контейнера
+# Set the working directory inside the container
 WORKDIR /app
 
-# Копируем файлы зависимостей
+# Copy the requirements file into the container
 COPY requirements.txt .
 
-# Устанавливаем зависимости
-RUN pip install -r requirements.txt
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем все файлы проекта в контейнер
+# Copy the rest of the application code into the container
 COPY . .
 
-# Запускаем приложение FastAPI
-CMD ["python", "run.py"]
+# Command to run when the container starts
+CMD ["uvicorn", "weather_app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
