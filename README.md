@@ -19,10 +19,13 @@
 1. Через командную строку:
    - Откройте командную строку (cmd) в папке с Dockerfile.
    - Соберите Docker образ с помощью команды:
-          docker build -t myweatherapp .
-   
+     
+     docker build -t myweatherapp .
+     
    - Затем запустите Docker контейнер, выполните следующую команду:
-          docker run -p 8000:8000 myweatherapp
+     
+     docker run -p 8000:8000 myweatherapp
+     
      
 
 ### На Linux:
@@ -40,13 +43,11 @@
 1. Через терминал:
    - Откройте терминал в папке с Dockerfile.
    - Соберите Docker образ с помощью команды:
-          docker build -t myweatherapp .
+     
+     docker build -t myweatherapp .
      
    - Затем запустите Docker контейнер, выполните следующую команду:
-          docker run -p 8000:8000 myweatherapp
      
-
-Эти команды запустят проект, используя uvicorn на локальном хосте на порту 8000 с функцией перезагрузки кода при изменениях файлов. 
-Если вам нужно указать другой хост или порт, вы можете внести соответствующие изменения в файле run.py.
-
+     docker run -p 8000:8000 myweatherapp
+     
 
